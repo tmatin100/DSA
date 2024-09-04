@@ -4,16 +4,19 @@ class Node:
         self.next = None
     def printNode(self):
         print("node value", self.data)
+        
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+        
     def printList(self):
         currentNode = self.head
         while currentNode is not None:
             print(currentNode.data, end=' -> ')
             currentNode = currentNode.next
         print()
+        
     def insertAtBeginning(self, value):
         newNode = Node(value)
         if self.head is None:
@@ -23,6 +26,7 @@ class SinglyLinkedList:
         else:
             newNode.next = self.head
             self.head = newNode
+            
     def insertAtEnd(self, value):
         newNode = Node(value)
         if self.head is None:
@@ -32,6 +36,7 @@ class SinglyLinkedList:
             last_node = self.tail
             last_node.next = newNode
             self.tail = newNode
+            
     def insertAtMiddle(self, insertAfter, value):
         if self.head is None:
             print("linkedlist is empty, cannot find ", insertAfter)
